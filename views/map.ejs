@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/map.css">
+</head>
+
+<body>
+    <section id="menu">
+        <div class="logo">
+            <img src="/assets/img/logo.png">
+            <h2>UWC2.0</h2>
+        </div>
+        <div class="items">
+            <a href="#">
+                <li>
+                    <i class="fas fa-chart-pie"></i>
+                    <span href="#">Dashboard</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-person-digging"></i>
+                    <span href="#">Employees</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-truck"></i>
+                    <span href="#">Vehicles</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-location-pin"></i>
+                    <span href="#">Checkpoints</span>
+                </li>
+            </a>
+            <a class="active" href="#">
+                <li>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span href="#">Map</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span href="#">Statistics</span>
+                </li>
+            </a>
+        </div>
+    </section>
+    <section id="interface">
+        <div class="navbar">
+            <div class="n1">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="profile">
+                <i class="fas fa-bell"></i>
+                <img src="/assets/img/logo.png" alt="">
+            </div>
+        </div>
+
+        <h3 class="i-name">
+            Map
+        </h3>
+
+        <div class="map-section">
+            <div class="map-container">
+                <div id="map">
+                    <!-- <img src="/assets/img/map.png"> -->
+                </div>
+            </div>
+            <div class="truck-route-info">
+                <div class="truck-route-title box">Truck - Route Lists</div>
+                <div class="truck-route-list">
+                    <div class="truck-route-item box active">Truck - Route 1</div>
+                    <div class="truck-route-item box">Truck - Route 2</div>
+                    <div class="truck-route-item box">Truck - Route 3</div>
+                    <div class="truck-route-item box">Truck - Route 4</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?region=VN&language=vi&callback=initMap">
+</script>
+<script>
+    function initMap() {
+    const trashbinicon = {
+        url: "/assets/img/trashbin.png",
+        scaledSize: new google.maps.Size(32, 32),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0),
+    };
+    var pointA = new google.maps.LatLng(10.801531, 106.662270),
+        pointB = new google.maps.LatLng(10.787433, 106.653249),
+        pointC = new google.maps.LatLng(10.787737, 106.662874),
+        pointD = new google.maps.LatLng(10.770760, 106.657869),
+        pointE = new google.maps.LatLng(10.782947, 106.672021),
+        myOptions = {
+            zoom: 14,
+            center: pointC
+        },
+        map = new google.maps.Map(document.getElementById('map'), myOptions),
+        // Instantiate a directions service.
+        directionsService = new google.maps.DirectionsService,
+        directionsDisplay = new google.maps.DirectionsRenderer({
+            map: map
+        }),
+        markerA = new google.maps.Marker({
+            position: pointA,
+            title: "MCP A",
+            icon: trashbinicon,
+            label: "A",
+            map: map
+        }),
+        markerB = new google.maps.Marker({
+            position: pointB,
+            title: "MCP B",
+            icon: trashbinicon,
+            label: "B",
+            map: map
+        }),
+        markerC = new google.maps.Marker({
+            position: pointC,
+            title: "MCP C",
+            icon: trashbinicon,
+            label: "C",
+            map: map
+        }),
+        markerD = new google.maps.Marker({
+            position: pointD,
+            title: "MCP D",
+            icon: trashbinicon,
+            label: "D",
+            map: map
+        }),
+        markerE = new google.maps.Marker({
+            position: pointE,
+            title: "MCP E",
+            icon: trashbinicon,
+            label: "E",
+            map: map
+        }),
+        waypts = [
+            {
+                location: pointB,
+                stopover: false,
+            },
+            {
+                location: pointD,
+                stopover: false,
+            },
+            {
+                location: pointC,
+                stopover: false,
+            },
+        ]
+
+    // get route from A to B
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointB, pointC);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointC, pointD);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointD, pointE);
+    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointE, waypts);
+    
+}
+
+
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, waypts) {
+    directionsService.route({
+        origin: pointA,
+        destination: pointB,
+        waypoints: waypts,
+        optimizeWaypoints: true,
+        avoidTolls: true,
+        avoidHighways: false,
+        travelMode: google.maps.TravelMode.DRIVING
+    }, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        } else {
+            window.alert('Directions request failed due to ' + status);
+        }
+    });
+}
+
+initMap();
+</script>
+
+</html>

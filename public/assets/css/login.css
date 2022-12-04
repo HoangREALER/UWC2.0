@@ -1,0 +1,251 @@
+body{
+    --color_text_primary: #414141;
+    --color_text_secondary: #868484;
+    --color_background: #e4e3e3;
+    --color_background_hover:#c2c2c2;
+    --color_background_focus: #fff;
+    --color_text_button: #fff;
+    --color_button: #56F45C;
+    --color_button_hover: #45CC4A;
+    --color_button_click: #319835;
+    --color_error: #FF1E1E;
+    --color_border: #414141;
+    --check_color: #21f356;
+    --border_radius: 5px;
+
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+/* title start */
+.title_container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 400px;
+    border-radius: var(--border_radius);
+    padding: 0rem 2rem;
+}
+
+.title_container h1 {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font: 700 2.5rem 'Quicksand', sans-serif;
+    color: var(--color_text_primary);
+}
+
+.image{
+    width: 100%;
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    max-width: fit-content;
+    height: auto;
+}
+/* title end */
+
+
+/*  main content start */
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 5%;
+    padding-top: 0;
+}
+
+.image.user_icon{
+    width: 20%;
+    margin-top: 0;
+}
+
+.container,
+.form_input,
+.form_button{
+    font: 500 1rem 'Quicksand', sans-serif;
+}
+
+.form{
+    height: 50%;
+}
+.form > *:first-child{
+    margin-top: 0;
+}
+
+.form > *:last-child{
+    margin-bottom: 0;
+}
+
+.form_title{
+    margin-bottom: 1rem;
+    font: 700 2rem 'Inter', sans-serif;
+    color: var(--color_text_primary);
+    text-align: center;
+}
+
+.form_input_group{
+    margin: 1rem 0rem;
+    position: relative;
+    display: flex;
+    height: 15%;
+    /* display: inline-flex; */
+}
+
+.form_input_group input{
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border_radius);
+    border: 2px solid var(--color_border);
+    outline: none;
+    background: var(--color_background);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form_input_group .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    left:93%;
+}
+
+.form_input_group input:hover{
+    background: var(--color_background_hover);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form_input_group input:focus{
+    border-color: var(--color_button_click);
+    background: var(--color_background_focus);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+}
+
+.message_error{
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--color_error);
+}
+
+.form_button{
+    width: 100%;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--color_text_button);
+    border: none;
+    box-sizing: border-box;
+    border-radius: var(--border_radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color_button);
+}
+
+.form_button:hover{
+    background: var(--color_button_hover);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form_button:active{
+    transform: scale(0.98);
+    background: var(--color_button_click);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+}
+/* main content end */
+
+
+/* Remember me start*/
+.check_container {
+    float: right;
+    right: 5%;
+    margin-top: 0;
+    /* display: block; */
+    position: relative;
+    color: var(--color_text_primary);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .check_container:hover{
+    text-decoration: underline;
+  }
+  
+  /* Hide the browser's default checkbox */
+.check_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0.1rem;
+    left: 7.5rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: var(--border_radius);
+    background-color: var(--color_background);
+  }
+  
+  /* When the checkbox is checked, add a green background */
+.check_container input:checked ~ .checkmark {
+    background-color: var(--check_color);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+.check_container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+.check_container .checkmark:after {
+    left: 0.3rem;
+    top: 0.1rem;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  /* Remember me end */
+
+
+/* Forgot account start */
+.form_link{
+    color: var(--color_text_primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form_link:hover{
+    text-decoration: underline;
+}
+/* Forgot account end */

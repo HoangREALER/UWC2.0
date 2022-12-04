@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    
+    
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/assets/css/employ.css" />
+    <script 
+        src="https://code.jquery.com/jquery-3.5.1.js">
+    </script>
+    <script 
+        src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
+    </script>
+    <script 
+        src="/assets/js/datatables.js">
+    </script>
+    
+    
+</head>
+    
+<body>
+    
+    <section id="menu">
+        <div class="logo">
+            <img src="/assets/img/logo.png">
+            <h2>UWC2.0</h2>
+        </div>
+        <div class="items">
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span href="#">Bảng tin</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fas fa-person-digging"></i>
+                    <span href="#">Danh sách nhân viên</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-truck"></i>
+                    <span href="#">Danh sách phương tiện</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-location-pin"></i>
+                    <span href="#">Checkpoints</span>
+                </li>
+            </a>
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span href="#">Map</span>
+                </li>
+            </a>    
+            <a href="#">
+                <li>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+            </a>
+        </div>
+    </section>
+    <section id="interface">
+        
+        <div class="navbar">
+            <div class="n1">
+            
+            </div>
+            <div class="profile">
+                <i class="fas fa-bell"></i>
+                <img src="/assets/img/logo.png" alt="">
+            </div>
+        </div>
+    
+    
+        
+
+        
+        <div class="t_header">
+        <!--breadcrumb here
+            <div class="t_header.content">
+                <ul class="breadcrumbs">
+                    
+                    <li class="breadcrumbs__item">
+                        <a href="" class="breadcrumbs__link">Home</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="" class="breadcrumbs__link">Media</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a href="" class="breadcrumbs__link">Photos</a>
+                    </li>
+                    
+                    <li class="breadcrumbs__item">
+                        <a href="" class="breadcrumbs__link breadcrumbs__link--active">Employees</a>
+                    </li>
+                </ul>
+            </div>
+        -->
+            <h1>UWC2.0 | DANH SÁCH NHÂN VIÊN</h1>
+            <div class="delcard1" id="sample-employee-card">
+                <h1 class="til1">Thông tin nhân viên</h1>
+                <h3></h3>
+                <h4>Chọn nhân viên để hiển thị thông tin của họ </h4>
+                
+                
+            </div>   
+            <div class="delcard" id="Employee Details" style="display: none;">
+                <h1 class="til1">Thông tin nhân viên</h1>
+                <div class="image-cropper">
+                    <img id ="avatar" src=""/>
+                </div>
+
+                <h4 id="patient-name">m</h4>
+                <h4 id="patient-position">m</h4>
+                <h4 id="patient-age">m</h4>
+                <h4 id="gender">m</h4>
+                <h4 id="patient-startdate">m</h4>
+                <h4 id="patient-status">m</h4>
+                
+                <!-- HTML !-->
+                <a href="https://google.com" class="button-17" role="button">Thông tin hoàn chỉnh</a>           <!--change here-->
+            </div>   
+            
+        </div>
+  
+        
+
+
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="dt-head-center">ID</th>
+                    <th class="dt-head-center">imgsrc</th>
+                    <th class="dt-head-center">gender</th>
+                    <th class="dt-head-center">Tên</th>
+                    <th class="dt-head-center">Vị trí</th>
+                    <th class="dt-head-center">Age</th>
+                    <th class="dt-head-center">Ngày</th>
+                    <th class="dt-head-center">Trạng thái công việc</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>COL_01</td>
+                    <td>/assets/img/eimg5.jpg</td>
+                    <td>Nam</td>
+                    <td>Nguyễn Văn An</td>
+                    <td>Tài xế xe thu gom</td>
+                    <td>30</td>
+                    <td class="dt-center">2011-05-03</td>
+                    <td class="dt-center">Trống</td>
+                </tr>
+                <tr>
+                    <td>JAN_01</td>
+                    <td>/assets/img/eimg1.jpg</td>
+                    <td>Nam</td>
+                    <td>Ngô Hải Nam</td>
+                    <td>Lao công khu vực</td>
+                    <td>27</td>
+                    <td class="dt-center">2009-08-19</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_02</td>
+                    <td>/assets/img/eimg2.jpg</td>
+
+                    <td>Nam</td>
+                    <td>Nguyễn Văn Tú</td>
+                    <td>Lao công khu vực</td>
+                    <td>28</td>
+                    <td class="dt-center">2013-08-11</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_03</td>
+                    <td>/assets/img/eimg3.jpg</td>
+
+                    <td>Nam</td>
+                    <td>Đoàn Ngọc Hải</td>
+                    <td>Lao công khu vực</td>
+                    <td>24</td>
+                    <td class="dt-center">2009-07-07</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>COL_02</td>
+                    <td>/assets/img/eimg4.jpg</td>
+
+                    <td>Nam</td>
+                    <td>Chu Hùng Mạnh</td>
+                    <td>Tài xế xe thu gom</td>
+                    <td>24</td>
+                    <td class="dt-center">2012-04-09</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>COL_03</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Châu Hoàng Đức</td>
+                    <td>Tài xế xe thu gom</td>
+                    <td>26</td>
+                    <td class="dt-center">2010-01-04</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>COL_04</td>
+                    <td>/assets/img/eimg6.jpg</td>
+
+                    <td>Nam</td>
+                    <td>Phạm Minh Khôi</td>
+                    <td>Tài xế xe thu gom</td>
+                    <td>26</td>
+                    <td class="dt-center">2012-06-01</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_04</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nữ</td>
+                    <td>Nguyễn Phi Nhung</td>
+                    <td>Lao công khu vực</td>
+                    <td>30</td>
+                    <td class="dt-center">2013-02-01</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_05</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nữ</td>
+                    <td>Lưu Xuân Thảo</td>
+                    <td>Lao công khu vực</td>
+                    <td>35</td>
+                    <td class="dt-center">2011-12-06</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_06</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nữ</td>
+                    <td>Đào Thị Xuyến</td>
+                    <td>Lao công khu vực</td>
+                    <td>29</td>
+                    <td class="dt-center">2011-03-21</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_07</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Vũ Trọng Phúc</td>
+                    <td>Lao công khu vực</td>
+                    <td>21</td>
+                    <td class="dt-center">2009-02-27</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_08</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Trịnh Xuân Khanh</td>
+                    <td>Lao công khu vực</td>
+                    <td>30</td>
+                    <td class="dt-center">2010-07-14</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_09</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Phùng Bá Tánh</td>
+                    <td>Lao công khu vực</td>
+                    <td>35</td>
+                    <td class="dt-center">2008-11-13</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_10</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Đỗ Thanh Minh</td>
+                    <td>Lao công khu vực</td>
+                    <td>34</td>
+                    <td class="dt-center">2011-06-27</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+                <tr>
+                    <td>JAN_11</td>
+                    <td>/assets/img/eimgn.png</td>
+
+                    <td>Nam</td>
+                    <td>Lưu Minh Hiếu</td>
+                    <td>Lao công khu vực</td>
+                    <td>27</td>
+                    <td class="dt-center">2011-01-25</td>
+                    <td class="dt-center">Đã giao nhiệm vụ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th class="dt-head-center">ID</th>
+                    <th class="dt-head-center">imgsrc</th>
+                    <th class="dt-head-center">gender</th>
+                    <th class="dt-head-center">Tên</th>
+                    <th class="dt-head-center">Vị trí</th>
+                    <th class="dt-head-center">Age</th>
+                    <th class="dt-head-center">Ngày</th>
+                    <th class="dt-head-center">Trạng Thái</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        
+
+        <div class="footer-bottom">
+            <p>copyright &copy;2021 <a href="#">HCMUT - BKSUS</a>  </p>
+        </div>
+    </section>
+    
+    
+</body>
+
+</html>
+
+
+
+
