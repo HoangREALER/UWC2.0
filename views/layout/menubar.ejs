@@ -1,0 +1,44 @@
+<section id="menu">
+    <div class="logo">
+        <img src="/assets/img/logo.png">
+        <h2>UWC2.0</h2>
+    </div>
+    <div class="items">
+        <a class="<%- page.dashboard === 1 ? 'active' : ' ' %>" href="/">
+            <li>
+                <i class="fa-solid fa-chart-pie"></i>
+                <span href="#">Bảng tin</span>
+            </li>
+        </a>
+        <a class="<%- page.employee === 1 ? 'active' : ' ' %>" href="employee">
+            <li>
+                <i class="fas fa-person-digging"></i>
+                <span href="#">Danh sách nhân viên</span>
+            </li>
+        </a>
+        <a class="<%- page.vehicle === 1 ? 'active' : ' ' %>" href="#">
+            <li>
+                <i class="fa-solid fa-truck"></i>
+                <span href="#">Danh sách phương tiện</span>
+            </li>
+        </a>
+        <a class="<%- page.mcp === 1 ? 'active' : ' ' %>" href="#">
+            <li>
+                <i class="fa-solid fa-location-pin"></i>
+                <span href="#">Địa điểm</span>
+            </li>
+        </a>
+        <a class="<%- page.map === 1 ? 'active' : ' ' %>" href="map">
+            <li>
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span href="#">Map</span>
+            </li>
+        </a>    
+        <a class="<%- page.statistics === 1 ? 'active' : ' ' %>" href="#">
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                <span href="#">Thống kê</span>
+            </li>
+        </a>
+    </div>
+</section>

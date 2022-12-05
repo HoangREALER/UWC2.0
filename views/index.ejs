@@ -1,73 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-
+    <%- include('layout/metadata.ejs') %>
+    
 <body>
-    <section id="menu">
-        <div class="logo">
-            <img src="/assets/img/logo.png">
-            <h2>UWC2.0</h2>
-        </div>
-        <div class="items">
-            <a  class="active" href="#">
-                <li>
-                    <i class="fas fa-chart-pie"></i>
-                    <span href="#">Dashboard</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-person-digging"></i>
-                    <span href="#">Employees</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-truck"></i>
-                    <span href="#">Vehicles</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-location-pin"></i>
-                    <span href="#">Checkpoints</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <span href="#">Map</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span href="#">Statistics</span>
-                </li>
-            </a>
-        </div>
-    </section>
+    
+    <%- include('layout/menubar.ejs') %>
     <section id="interface">
-        <div class="navbar">
-            <div class="n1">
-                <div class="search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search">
-                </div>
-            </div>
-            <div class="profile">
-                <i class="fas fa-bell"></i>
-                <img src="/assets/img/logo.png" alt="">
-            </div>
-        </div>
+        
+        <%- include('layout/navbar.ejs') %>
 
         <h3 class="i-name">
             Dashboard
@@ -104,7 +45,7 @@
             </div>
         </div>
 
-        <div class="board">
+        <!-- <div class="board">
             <table>
                 <thead>
                     <tr>
@@ -131,7 +72,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
     </section>
 </body>
 

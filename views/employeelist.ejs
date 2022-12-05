@@ -1,89 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee list</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
-    
-    
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    
-    
-    <link rel="stylesheet" href="/assets/css/employ.css" />
-    <script 
-        src="https://code.jquery.com/jquery-3.5.1.js">
-    </script>
-    <script 
-        src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
-    </script>
-    <script 
-        src="/assets/js/datatables.js">
-    </script>
-    
-    
-</head>
+    <%- include('layout/metadata.ejs') %>
     
 <body>
     
-    <section id="menu">
-        <div class="logo">
-            <img src="/assets/img/logo.png">
-            <h2>UWC2.0</h2>
-        </div>
-        <div class="items">
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-chart-pie"></i>
-                    <span href="#">Bảng tin</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fas fa-person-digging"></i>
-                    <span href="#">Danh sách nhân viên</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-truck"></i>
-                    <span href="#">Danh sách phương tiện</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-location-pin"></i>
-                    <span href="#">Checkpoints</span>
-                </li>
-            </a>
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <span href="#">Map</span>
-                </li>
-            </a>    
-            <a href="#">
-                <li>
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span href="#">Thống kê</span>
-                </li>
-            </a>
-        </div>
-    </section>
+    <%- include('layout/menubar.ejs') %>
     <section id="interface">
         
-        <div class="navbar">
-            <div class="n1">
-            
-            </div>
-            <div class="profile">
-                <i class="fas fa-bell"></i>
-                <img src="/assets/img/logo.png" alt="">
-            </div>
-        </div>
+        <%- include('layout/navbar.ejs') %>
     
     
         
@@ -335,9 +260,7 @@
 
         
 
-        <div class="footer-bottom">
-            <p>copyright &copy;2021 <a href="#">HCMUT - BKSUS</a>  </p>
-        </div>
+        <%- include('layout/footer.ejs') %>
     </section>
     
     
