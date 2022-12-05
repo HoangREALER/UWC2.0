@@ -49,7 +49,7 @@ a:hover {
 	margin-top: 5%;
 	margin-left: 30px;
 	width: 30%;
-	height: 60%;
+	height: 70%;
 	position: relative;
 	float: left;
 	background-color: #01f2a0;
@@ -74,7 +74,7 @@ a:hover {
 	margin-right: 30px;
 	margin-top: 5%;
 	width: 30%;
-	height: 60%;
+	height: 70%;
 	position: relative;
 	float: right;
 	background-color: #01f2a0;
@@ -100,6 +100,7 @@ a:hover {
 }
 
 .info {
+	position: relative;
 	display: inline-block;
 	width: 100%;
 	text-align: center;
@@ -113,9 +114,32 @@ a:hover {
 	margin-left: 5%;
 	width: 24%;
 }
+
 .inf_2 {
 	display: inline-block;
 	text-align: left;
 	width: 45%;
 	margin-left: 20%;
+}
+
+.btn {
+	-webkit-border-radius: 8;
+	-moz-border-radius: 8;
+	border-radius: 8px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	background: #11999e;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: #11999e;
+	background-image: -webkit-linear-gradient(top, #11999e, #01f2a0);
+	background-image: -moz-linear-gradient(top, #11999e, #01f2a0);
+	background-image: -ms-linear-gradient(top, #11999e, #01f2a0);
+	background-image: -o-linear-gradient(top, #11999e, #01f2a0);
+	background-image: linear-gradient(to bottom, #11999e, #01f2a0);
+	text-decoration: none;
 }
