@@ -1,29 +1,36 @@
 body{
-    --color_text_primary: #414141;
+    --color_text_title: rgb(33, 33, 33);
+    --color_text_primary: #2c2c2c;
     --color_text_secondary: #868484;
-    --color_background: #e4e3e3;
-    --color_background_hover:#c2c2c2;
+    --color_background: #f0f0f0;
+    --color_background_hover:#dedede;
     --color_background_focus: #fff;
     --color_text_button: #fff;
-    --color_button: #56F45C;
-    --color_button_hover: #45CC4A;
+    --color_button: #4bd64f;
+    --color_button_hover: #3db741;
     --color_button_click: #319835;
     --color_error: #FF1E1E;
     --color_border: #414141;
-    --check_color: #21f356;
+    --color_border_focus: #1f5d21;
+    --check_color: #1ab140;
     --border_radius: 5px;
 
     margin: 0;
     height: 100%;
     overflow: hidden;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     font-size: 24px;
 }
 
 /* title start */
 .title_container{
+    position: relative;
+    bottom: 5%;
+    left: 5%;
+
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -32,21 +39,20 @@ body{
     padding: 0rem 2rem;
 }
 
-.title_container h1 {
+.title_container h1 {    
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    font: 700 2.5rem 'Quicksand', sans-serif;
-    color: var(--color_text_primary);
+    font: 1000 4.5rem 'Quicksand', sans-serif;
+    color: var(--color_text_title);
 }
 
 .image{
-    width: 100%;
     display: block;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 90%;
     max-width: fit-content;
     height: auto;
 }
@@ -55,13 +61,17 @@ body{
 
 /*  main content start */
 .container{
+    position: relative;
+    right: 5%;
+
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     max-width: 600px;
+    background: linear-gradient(rgb(124, 255, 177), rgb(124, 255, 124));
+    border-radius: 5%;
     box-sizing: border-box;
     padding: 5%;
-    padding-top: 0;
 }
 
 .image.user_icon{
@@ -76,7 +86,7 @@ body{
 }
 
 .form{
-    height: 50%;
+    height: fit-content;
 }
 .form > *:first-child{
     margin-top: 0;
@@ -98,7 +108,6 @@ body{
     position: relative;
     display: flex;
     height: 15%;
-    /* display: inline-flex; */
 }
 
 .form_input_group input{
@@ -127,7 +136,7 @@ body{
 }
 
 .form_input_group input:focus{
-    border-color: var(--color_button_click);
+    border: 3px solid var(--color_border_focus);
     background: var(--color_background_focus);
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 }
@@ -171,7 +180,7 @@ body{
     float: right;
     right: 5%;
     margin-top: 0;
-    /* display: block; */
+
     position: relative;
     color: var(--color_text_primary);
     margin-bottom: 1rem;
