@@ -24,8 +24,23 @@ const scheduleView = (req, res) => {
     } );
 }
 
+const routeView = (req, res) => {
+    var page = {
+        employee: 1
+    }
+    // var route = {
+    //     points : {
+    //         point1: 
+    //     }
+    // }\
+    res.render("map", {
+        page: page
+    } );
+}
+
 module.exports =  {
     employeeList,
     profileView,
-    scheduleView
+    scheduleView,
+    routeView
 };
