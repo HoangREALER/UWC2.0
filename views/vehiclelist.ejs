@@ -29,8 +29,7 @@
                         <a href="" class="breadcrumbs__link breadcrumbs__link--active">Employees</a>
                     </li>
                 </ul>
-            </div>
-        -->
+            </div> -->
             <h1>UWC2.0 | DANH SÁCH PHƯƠNG TIỆN</h1>
             <div class="delcard1" id="sample-employee-card">
                 <h1 class="til1">Thông tin phương tiện</h1>
@@ -300,26 +299,24 @@
                 </tr>
             </tbody>
             <tfoot>
-                <tr>
                     <th class="dt-head-center">ID</th>
                     <th class="dt-head-center">imgsrc</th>
                     <th class="dt-head-center">Loại</th>
                     <th class="dt-head-center">Ngày</th>
                     <th class="dt-head-center">Trạng thái</th>
-
-                </tr>
+                    <th class="dt-head-center">Mã phương tiện</th>
+                    <th class="dt-head-center">Mã nhân viên</th>
+                    <th class="dt-head-center">Tên nhân viên</th>
+                    <th class="dt-head-center">loc</th>
             </tfoot>
         </table>
 
         
+        <%- include('layout/chat.ejs') %>
 
-        <div class="footer-bottom">
-            <p>copyright &copy;2021 <a href="#">HCMUT - BKSUS</a>  </p>
-        </div>
+        <%- include('layout/footer.ejs') %>
     </section>
-    <%- include('layout/chat.ejs') %>
-
-    <%- include('layout/footer.ejs') %>
+    
     
 </body>
     <%- include('layout/scripts.ejs') %>

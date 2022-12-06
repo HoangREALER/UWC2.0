@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<%- include('layout/metadata.ejs') %>
+
+<body>
+
+	<%- include('layout/menubar.ejs') %>
+
+		<section id="interface">
+			<%- include('layout/navbar.ejs') %>
+			<h3 class="i-name">
+				<a href="/employee">Nhân viên</a>
+				>
+				<a href="/employee/COL_01">Nguyễn Văn An</a>
+				>
+				<a href="#">Lịch làm việc</a>
+			</h3>
+			<%- include('layout/scripts.ejs') %>
+		</section>
+
+
+		<script>
+			webix.ready(function () {
+				webix.CustomScroll.init();
+				webix.ui({
+					view: "scheduler",
+					container: "interface",
+					date: new Date(2023, 12, 31, 0, 0, 0),
+					calendars: false,
+					url: "https://docs.webix.com/calendar-backend/",
+				});
+			});
+		</script>
+
+
+
+
+</body>
+
+</html>

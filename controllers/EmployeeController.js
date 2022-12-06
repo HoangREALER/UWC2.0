@@ -6,6 +6,26 @@ const employeeList = (req, res) => {
         page: page,
     } );
 }
+const profileView = (req, res) => {
+    var page = {
+        employee: 1
+    }
+    res.render("profile", {
+        page: page
+    } );
+}
+
+const scheduleView = (req, res) => {
+    var page = {
+        employee: 1
+    }
+    res.render("calendar", {
+        page: page
+    } );
+}
+
 module.exports =  {
-    employeeList
+    employeeList,
+    profileView,
+    scheduleView
 };

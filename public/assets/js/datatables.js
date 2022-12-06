@@ -54,8 +54,7 @@ const updateSide = (myObj) => {
   document.getElementById('avatar').src = myObj["imgsrc"];
   document.getElementById('avatar').width = 180;
   document.getElementById('avatar').height = 200;
-  document.getElementById('')
-
+  document.getElementById('profile-link').href = "/employee/" + myObj["ID"];
 
 }
 function add_google_logo() {
