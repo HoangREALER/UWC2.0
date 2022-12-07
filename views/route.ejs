@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('layout/metadata.ejs') %>
+
+<body>
+    <%- include('layout/menubar.ejs') %>
+    
+    <section id="interface">
+        <%- include('layout/navbar.ejs') %>
+
+        <h3 class="i-name">
+            Map
+        </h3>
+
+        <div class="map-section">
+            <div class="map-container">
+                <div id="map">
+                    <!-- <img src="/assets/img/map.png"> -->
+                </div>
+            </div>
+            <div class="truck-route-info">
+                <div class="truck-route-title box">Truck - Route Lists</div>
+                <div class="truck-route-list">
+                    <div class="truck-route-item box active">Truck - Route 1</div>
+                    <div class="truck-route-item box">Truck - Route 2</div>
+                    <div class="truck-route-item box">Truck - Route 3</div>
+                    <div class="truck-route-item box">Truck - Route 4</div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('layout/chat.ejs') %>
+
+        <%- include('layout/footer.ejs') %>
+    </section>
+
+    <%- include('layout/scripts.ejs') %>
+
+</body>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4BBnR9kxm9Ro_UFnecjMjAQEibdFGHRc&region=VN&language=vi&callback=initMap">
+</script>
+<script>
+    function initMap() {
+    const trashbinicon = {
+        url: "/assets/img/trashbin.png",
+        scaledSize: new google.maps.Size(32, 32),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0),
+    };
+    var point0001 = new google.maps.LatLng(10.801531, 106.662270),
+        point0002 = new google.maps.LatLng(10.787433, 106.653249),
+        point0003 = new google.maps.LatLng(10.787737, 106.662874),
+        point0004 = new google.maps.LatLng(10.770760, 106.657869),
+        point0005 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0006 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0007 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0008 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0009 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0010 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0011 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0012 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0013 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0014 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0015 = new google.maps.LatLng(10.782947, 106.672021),
+        // point0016 = new google.maps.LatLng(10.782947, 106.672021),
+        myOptions = {
+            zoom: 14,
+            center: point0003
+        },
+        map = new google.maps.Map(document.getElementById('map'), myOptions),
+        // Instantiate a directions service.
+        route1 = new google.maps.DirectionsService,
+        directionsDisplay = new google.maps.DirectionsRenderer({
+            map: map
+        }),
+        markerA = new google.maps.Marker({
+            position: point0001,
+            title: "MCP 1",
+            icon: trashbinicon,
+            label: "1",
+            map: map
+        }),
+        markerB = new google.maps.Marker({
+            position: point0002,
+            title: "MCP 2",
+            icon: trashbinicon,
+            label: "2",
+            map: map
+        }),
+        markerC = new google.maps.Marker({
+            position: point0003,
+            title: "MCP 3",
+            icon: trashbinicon,
+            label: "3",
+            map: map
+        }),
+        markerD = new google.maps.Marker({
+            position: point0004,
+            title: "MCP 4",
+            icon: trashbinicon,
+            label: "4",
+            map: map
+        }),
+        markerE = new google.maps.Marker({
+            position: point0005,
+            title: "MCP 5",
+            icon: trashbinicon,
+            label: "5",
+            map: map
+        }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 6",
+        //     icon: trashbinicon,
+        //     label: "6",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 7",
+        //     icon: trashbinicon,
+        //     label: "7",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 8",
+        //     icon: trashbinicon,
+        //     label: "8",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 9",
+        //     icon: trashbinicon,
+        //     label: "9",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 10",
+        //     icon: trashbinicon,
+        //     label: "10",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 11",
+        //     icon: trashbinicon,
+        //     label: "11",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 12",
+        //     icon: trashbinicon,
+        //     label: "12",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 13",
+        //     icon: trashbinicon,
+        //     label: "13",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 14",
+        //     icon: trashbinicon,
+        //     label: "14",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 15",
+        //     icon: trashbinicon,
+        //     label: "15",
+        //     map: map
+        // }),
+        // markerE = new google.maps.Marker({
+        //     position: point0005,
+        //     title: "MCP 16",
+        //     icon: trashbinicon,
+        //     label: "16",
+        //     map: map
+        // }),
+        waypts = [
+            {
+                location: point0002,
+                stopover: false,
+            },
+            {
+                location: point0003,
+                stopover: false,
+            },
+            {
+                location: point0004,
+                stopover: false,
+            },
+        ];
+
+    // get route from A to B
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointB, pointC);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointC, pointD);
+    // calculateAndDisplayRoute(directionsService, directionsDisplay, pointD, pointE);
+    calculateAndDisplayRoute(route1, directionsDisplay, point0001, point0005, waypts);
+    
+}
+
+
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, waypts) {
+    directionsService.route({
+        origin: pointA,
+        destination: pointB,
+        waypoints: waypts,
+        optimizeWaypoints: true,
+        avoidTolls: true,
+        avoidHighways: false,
+        travelMode: google.maps.TravelMode.DRIVING
+    }, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        } else {
+            window.alert('Directions request failed due to ' + status);
+        }
+    });
+}
+
+initMap();
+</script>
+
+</html>

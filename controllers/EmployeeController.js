@@ -33,7 +33,7 @@ const routeView = (req, res) => {
     //         point1: 
     //     }
     // }\
-    res.render("map", {
+    res.render("route", {
         page: page
     } );
 }
