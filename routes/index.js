@@ -8,6 +8,7 @@ const router = express.Router();
 
 router.get('/', dashboardView);
 router.get('/login', loginView);
+router.post('/login', login);
 router.post('/', login);
 router.get('/map', mapView);
 router.get('/employee', employeeList);

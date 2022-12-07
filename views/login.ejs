@@ -21,13 +21,13 @@
             <h1 class="form_title">LOGIN</h1>
             <div class="message_error"></div>
             <div class="form_input_group">
-                <input type="text" class="form_input" autofocus placeholder="Username">
+                <input id="username" type="text" class="form_input" autofocus placeholder="Username">
                 <span class="icon">
                     <i class="fa-solid fa-user fa-2x"></i>
                 </span>
             </div>
             <div class="form_input_group">
-                <input type="password" class="form_input" autofocus placeholder="Password">
+                <input id="password" type="password" class="form_input" autofocus placeholder="Password">
                 <span class="icon">
                     <i class="fa-solid fa-lock fa-2x"></i>
                 </span>
@@ -39,14 +39,20 @@
                 <span class="checkmark"></span>
             </label>
             <p class="forgot_account">
-                <a href="#" class="form_link">Forgot your account?</a>
+                <a href="#" class="form_link">Forgot your password?</a>
             </p>
 
             <!-- link main view here -->
-            <button class="form_button" type="submit">Login</button>
+            <button id="login-btn" class="form_button" type="submit">Login</button>
             <!--  -->
 
         </form>
+
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.js">
+        </script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script src="/assets/js/login.js"></script>
     </div>
 </body>
 
